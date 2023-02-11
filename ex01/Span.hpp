@@ -6,7 +6,7 @@
 /*   By: aaguiler < aaguiler@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 21:12:13 by aaguiler          #+#    #+#             */
-/*   Updated: 2023/02/11 21:18:57 by aaguiler         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:20:02 by aaguiler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
   void addNumber(int n);
   int shortestSpan(void);
   int longestSpan(void);
+  void addRange(int start, int end);
 
   class SpanFullException : public std::exception
   {

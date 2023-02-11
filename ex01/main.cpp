@@ -6,7 +6,7 @@
 /*   By: aaguiler < aaguiler@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 21:14:33 by aaguiler          #+#    #+#             */
-/*   Updated: 2023/02/11 21:19:01 by aaguiler         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:22:22 by aaguiler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,20 @@ int main(void)
   }
 
   Span sp3 = Span(1000000);
-  for (int i = 0; i < 1000000; i++)
-    sp3.addNumber(i);
+  sp3.addRange(0, 999999);
   std::cout << sp3.shortestSpan() << std::endl;
   std::cout << sp3.longestSpan() << std::endl;
+
+    try
+  {
+    Span sp4 = Span(1000000);
+    sp4.addRange(0, 1000000);
+    std::cout << sp4.shortestSpan() << std::endl;
+    std::cout << sp4.longestSpan() << std::endl;
+  }
+  catch (std::exception &e)
+  {
+    std::cout << e.what() << std::endl;
+  }
   return 0;
 }

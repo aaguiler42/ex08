@@ -6,7 +6,7 @@
 /*   By: aaguiler < aaguiler@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 21:13:44 by aaguiler          #+#    #+#             */
-/*   Updated: 2023/02/11 21:14:29 by aaguiler         ###   ########.fr       */
+/*   Updated: 2023/02/11 21:20:13 by aaguiler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ void Span::addNumber(int n)
   if (this->_vec.size() >= this->_n)
     throw Span::SpanFullException();
   this->_vec.push_back(n);
+}
+
+void Span::addRange(int start, int end)
+{
+  if (start > end)
+    std::swap(start, end);
+  for (int i = start; i <= end; i++)
+    this->addNumber(i);
 }
 
 int Span::shortestSpan(void)
